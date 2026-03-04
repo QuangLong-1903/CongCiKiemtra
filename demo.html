@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+  <meta charset="UTF-8">
+  <title>Form Login</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      margin: 40px;
+    }
+    label {
+      display: block;
+      margin-top: 10px;
+    }
+    input {
+      margin-top: 5px;
+      padding: 5px;
+      width: 200px;
+    }
+    button {
+      margin-top: 15px;
+      padding: 8px 15px;
+    }
+  </style>
+</head>
+<body>
+  <form id="loginForm">
+    <label for="textboxusername">Tên đăng nhập</label>
+    <input type="text" id="textboxusername" name="txtUserName">
+
+    <label for="textboxmatkhau">Mật khẩu</label>
+    <input type="password" id="textboxmatkhau" name="txtmatkhau">
+
+    <button type="submit">Đăng nhập</button>
+  </form>
+
+  <script>
+    document.getElementById("loginForm").addEventListener("submit", function(event) {
+      event.preventDefault();
+
+      const username = document.getElementById("textboxusername").value;
+      const password = document.getElementById("textboxmatkhau").value;
+
+      if (username === "admin" && password === "admin") {
+        window.location.href = "success.html";
+      } else {
+        alert("Sai tên đăng nhập hoặc mật khẩu!");
+      }
+    });
+  </script>
+</body>
+</html>
